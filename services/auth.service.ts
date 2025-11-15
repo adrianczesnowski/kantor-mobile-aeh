@@ -14,7 +14,20 @@ interface LoginResponse {
     };
 }
 
+interface RegisterResponse {
+    message: string;
+    user: {
+        _id: string;
+        email: string;
+    };
+}
+
 export const loginUser = async (data: AuthData): Promise<LoginResponse> => {
     const response = await apiClient.post('/auth/login', data);
+    return response.data;
+};
+
+export const registerUser = async (data: AuthData): Promise<RegisterResponse> => {
+    const response = await apiClient.post('/auth/register', data);
     return response.data;
 };
