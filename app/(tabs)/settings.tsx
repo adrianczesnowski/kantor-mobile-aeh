@@ -83,7 +83,7 @@ export default function SettingsScreen() {
                         </Pressable>
 
                         <Pressable
-                            style={({ pressed }) => [styles.settingItem, styles.settingItemBottom, { opacity: pressed ? 0.7 : 1 }]}
+                            style={({ pressed }) => [styles.settingItem, { opacity: pressed ? 0.7 : 1 }]}
                             onPress={() => setModalVisible(true)}
                         >
                             <View style={styles.settingItemLeft}>
@@ -99,7 +99,7 @@ export default function SettingsScreen() {
                     <Text style={styles.groupTitle}>{t('settings.groupAccount', 'Konto')}</Text>
                     <View style={styles.settingsGroup}>
                         <Pressable
-                            style={({ pressed }) => [styles.settingItem, styles.settingItemFull, { opacity: pressed ? 0.7 : 1 }]}
+                            style={({ pressed }) => [styles.settingItem, { opacity: pressed ? 0.7 : 1 }]}
                             onPress={logout}
                         >
                             <View style={styles.settingItemLeft}>
