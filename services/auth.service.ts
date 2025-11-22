@@ -22,6 +22,11 @@ interface RegisterResponse {
     };
 }
 
+interface ChangePasswordData {
+    oldPassword: string;
+    newPassword: string;
+}
+
 export const loginUser = async (data: AuthData): Promise<LoginResponse> => {
     const response = await apiClient.post('/auth/login', data);
     return response.data;
@@ -29,5 +34,10 @@ export const loginUser = async (data: AuthData): Promise<LoginResponse> => {
 
 export const registerUser = async (data: AuthData): Promise<RegisterResponse> => {
     const response = await apiClient.post('/auth/register', data);
+    return response.data;
+};
+
+export const changePassword = async (data: ChangePasswordData) => {
+    const response = await apiClient.put('/users/password', data);
     return response.data;
 };
